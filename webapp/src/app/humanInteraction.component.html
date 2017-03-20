@@ -2,12 +2,12 @@
 <!-- 	<textarea rows="3">I AM HUMAN</textarea> -->
 <!-- </div> -->
 
-
+<form (submit)="create()">
 <div id="HumanOuterDiv">
 
 	<div id="HumanInnerDiv">
 
-		<textarea id="HumanInter">I have a great Idea, but absolutely no clue as to what to do</textarea>
+		<textarea id="HumanInter" onkeydown="if (event.keyCode == 13) { this.form.submit(); return false; }">I have a great Idea, but absolutely no clue as to what to do</textarea>
 
 	</div>
 
@@ -16,3 +16,4 @@
 <!-- style="color:black; background-color: transparent;" -->
 
 </div>
+</form>
