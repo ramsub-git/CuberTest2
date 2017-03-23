@@ -47,7 +47,7 @@ body {
   display:block;
   background: url('/assets/img/Rachel-smartcasual-silent-presenting.gif') center center / cover no-repeat;
   -webkit-background-size:contain;
-  background-size:150%;
+  background-size:contain;
   background-color: cornsilk;
 }
 
@@ -73,9 +73,9 @@ body {
   text-align:center;
   display:block;
   float:right;
-  background: url('/assets/img/progress.png') center top / cover no-repeat;
+  background: url('/assets/img/progress2.png') center center / cover no-repeat;
   -webkit-background-size:contain;
-  background-size:100%;
+  background-size:contain;
   background-color: cornsilk;
 }
 
