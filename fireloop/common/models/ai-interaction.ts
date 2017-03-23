@@ -20,7 +20,9 @@ import { Model } from '@mean-expert/model';
 
 class AIInteraction {
   // LoopBack model instance is injected in constructor
-  constructor(public model: any) {}
+  constructor(public model: any) {
+    console.log('AI Interaction : inside constructor');
+  }
 
   // Example Operation Hook
   beforeSave(ctx: any, next: Function): void {

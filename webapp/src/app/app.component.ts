@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
-import { HumanInteraction, FireLoopRef } from './shared/sdk/models';
+
 import { RealTime } from './shared/sdk/services';
+import { Observable } from 'rxjs/Observable';
+
+import { HumanInteraction } from './shared/sdk/models';
+import { FireLoopRef } from './shared/sdk/models';
+import {AIInteraction} from "./shared/sdk/models/AIInteraction";
 
 @Component({
   selector: 'app-root',
@@ -10,15 +15,8 @@ import { RealTime } from './shared/sdk/services';
 export class AppComponent {
   title = 'cuber.ai - make your idea work!';
 
-  private humanInter : HumanInteraction = new HumanInteraction();
-  private humanInterRef : FireLoopRef<HumanInteraction>;
-  
-  constructor(private rt:RealTime){ 
- 	
-  }
-  
-
-  create(): void {
-    this.humanInterRef.create(this.humanInter).subscribe(() => this.humanInter = new HumanInteraction()); 
+  constructor(private rt:RealTime){
+    this.rt.onReady().subscribe(() => {
+    });
   }
 }

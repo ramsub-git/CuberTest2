@@ -2,18 +2,20 @@
 <!-- 	<textarea rows="3">I AM HUMAN</textarea> -->
 <!-- </div> -->
 
-<form (submit)="create()">
+<!-- <form (submit)="createHuman()"> -->
+
+
 <div id="HumanOuterDiv">
 
 	<div id="HumanInnerDiv">
 
-		<textarea id="HumanInter" onkeydown="if (event.keyCode == 13) { this.form.submit(); return false; }">I have a great Idea, but absolutely no clue as to what to do</textarea>
+    <textarea id="HumanInter" (keyup.enter)="createHuman();" [(ngModel)]="humanInter.text" name="text"></textarea>
 
-	</div>
+  </div>
 
 
 
 <!-- style="color:black; background-color: transparent;" -->
 
 </div>
-</form>
+<!-- </form> -->

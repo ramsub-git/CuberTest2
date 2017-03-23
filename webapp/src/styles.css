@@ -1,5 +1,96 @@
 /* You can add global styles to this file, and also import other style files */
 
+body {
+  margin: 0;
+}
+
+.maincl {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+}
+
+.headercl
+{
+  position: absolute;
+  height: 10%;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align:center;
+  display:block;
+  background: lightblue;
+}
+
+.contentcl
+{
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  overflow:scroll;
+  background-color: beige;
+}
+
+
+.infercl
+{
+  position: absolute;
+  height: 100%;
+  width:20%;
+  top: 0;
+  left: 0;
+  float:left;
+  text-align:center;
+  display:block;
+  background: url('/assets/img/Rachel-smartcasual-silent-presenting.gif') center center / cover no-repeat;
+  -webkit-background-size:contain;
+  background-size:150%;
+  background-color: cornsilk;
+}
+
+.intercl
+{
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right:20%;
+  left: 20%;
+  text-align:center;
+  display:block;
+  background: beige;
+}
+
+.progresscl
+{
+  position: absolute;
+  height: 100%;
+  width:20%;
+  bottom:0;
+  right: 0;
+  text-align:center;
+  display:block;
+  float:right;
+  background: url('/assets/img/progress.png') center top / cover no-repeat;
+  -webkit-background-size:contain;
+  background-size:100%;
+  background-color: cornsilk;
+}
+
+.footercl
+{
+  position: absolute;
+  height: 10%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align:center;
+  display:block;
+  background: lightblue;
+}
+
 
 .AIInter
 {
@@ -16,7 +107,7 @@
     -moz-background-size: 100% 100%;
     -o-background-size: 100% 100%;
     background-size: 100% 100%;
-	
+
 	z-index:2;
 }
 
@@ -42,7 +133,6 @@ div#AIOuterDiv
 
 div#AIInnerDiv
 {
-	position: fixed center;
 	width:90%;
 	height:90%;
 	z-index:3;
@@ -71,7 +161,6 @@ div#HumanOuterDiv
 
 div#HumanInnerDiv
 {
-	position: fixed center;
 	width:90%;
 	height:90%;
 	z-index:3;
@@ -81,7 +170,6 @@ div#HumanInnerDiv
 
 textarea {
 	font-size:18px;
-	position: fixed center;
 	width:100%;
 	height:100%;
 	border:none;
@@ -107,12 +195,12 @@ textarea#HumanInter {
 {
 	z-index:1;
 	position: absolute;
-	top: 500;
-	right: 500;
-	bottom: 600;
-	left: 500;
-	overflow: shrink;
-	opacity:10%;
+	top: 500px;
+	right: 500px;
+	bottom: 600px;
+	left: 500px;
+	overflow: scroll;
+	opacity: 0.10;
 }
 
 .fullscreen-bg {

@@ -2,7 +2,8 @@
 
 	<div id="AIInnerDiv" class="Inter AI Inner">
 
-		<textarea id="#AIInter" readonly="readonly">I am AI...not the Borg! But I could be locutus! Pickard would be happy to see me, maybe even the voyager, but I am not sure if everything else should be ok!</textarea>
+
+    <textarea id="#AIInter" *ngFor="let _AIInter of AIInterRef.on('change') | async" name="AIText" [(ngModel)]=AIInter.text readonly="readonly"></textarea>
 
 	</div>
 

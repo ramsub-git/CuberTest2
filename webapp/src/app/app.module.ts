@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { OfficeComponent } from './office.component';
 import { HumanInteractionComponent } from './humanInteraction.component';
 import { AIInteractionComponent } from './AIInteraction.component';
+import { HumanInteraction } from "./shared/sdk/models/HumanInteraction";
+import { AIInteraction } from "./shared/sdk/models/AIInteraction";
 
 @NgModule({
   declarations: [

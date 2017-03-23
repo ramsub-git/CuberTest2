@@ -1,0 +1,96 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+body {
+  margin: 0;
+}
+
+.maincl {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+}
+
+.headercl
+{
+  position: absolute;
+  height: 10%;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align:center;
+  display:block;
+  background: cornflowerblue;
+}
+
+.contentcl
+{
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  overflow:scroll;
+  background-color: beige;
+}
+
+
+.progresscl
+{
+  position: absolute;
+  height: 100%;
+  width:10%;
+  top: 0;
+  left: 0;
+  float:left;
+  text-align:center;
+  display:block;
+  background: red;
+}
+
+.intercl
+{
+  position: absolute;
+  height: 100%;
+  width:100%;
+  top: 0;
+  left: 10%;
+  text-align:center;
+  display:block;
+  background: purple;
+}
+
+.infercl
+{
+  position: absolute;
+  height: 100%;
+  width:10%;
+  bottom:0;
+  right: 0;
+  text-align:center;
+  display:block;
+  background: yellow;
+  float:right;
+}
+
+.footercl
+{
+  position: absolute;
+  height: 10%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align:center;
+  display:block;
+  background: white;
+}
+
+li{
+  text-decoration: none;
+  display: block;
+  height: 20px;
+  width: 100%;
+  padding: 20px;
+
+}
