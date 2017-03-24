@@ -30,7 +30,6 @@ export class HumanInteractionComponent {
 
 
   createHuman(text:string): void {
-    /*
     let lHumanInteraction : HumanInteraction = new HumanInteraction({"text":""});
     let lHumanRef : FireLoopRef<HumanInteraction> = this.rt.FireLoop.ref<HumanInteraction>(HumanInteraction);
     let lAIRef : FireLoopRef<AIInteraction> = this.rt.FireLoop.ref<AIInteraction>(AIInteraction);
@@ -44,6 +43,5 @@ export class HumanInteractionComponent {
       console.log(instance);
     });
     this.humanInter = lHumanInteraction;
-     */
   }
 }

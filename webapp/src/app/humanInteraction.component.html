@@ -5,17 +5,8 @@
 <!-- <form (submit)="createHuman()"> -->
 
 
-<div id="HumanOuterDiv">
 
-	<div id="HumanInnerDiv">
-
-    <textarea id="HumanInter" (keyup.enter)="createHuman();" [(ngModel)]="humanInter.text" name="text"></textarea>
-
-  </div>
-
-
-
-<!-- style="color:black; background-color: transparent;" -->
-
-</div>
 <!-- </form> -->
+<div id="HumanInterDiv" class="humanIntercl">
+  <textarea id="HumanInter" (keyup.enter)="createHuman();" [(ngModel)]="humanInter.text" name="text"></textarea>
+</div>
