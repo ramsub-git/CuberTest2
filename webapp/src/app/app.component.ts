@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
-
 import { RealTime } from './shared/sdk/services';
-import { Observable } from 'rxjs/Observable';
 
-import { HumanInteraction } from './shared/sdk/models';
-import { FireLoopRef } from './shared/sdk/models';
-import {AIInteraction} from "./shared/sdk/models/AIInteraction";
+import { OfficeComponent } from './office.component';
 
 @Component({
   selector: 'app-root',

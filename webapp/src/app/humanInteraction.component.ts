@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import { RealTime } from './shared/sdk/services';
 import { Observable } from 'rxjs/Observable';
 import { FireLoopRef } from './shared/sdk/models';
+import { FireLoop } from './shared/sdk/models/FireLoop';
 
 import { HumanInteraction } from './shared/sdk/models';
 import { AIInteraction } from './shared/sdk/models';
@@ -10,7 +11,8 @@ import { Office } from './shared/sdk/models';
 
 @Component({
   selector: 'human-interaction',
-  templateUrl: './humanInteraction.component.html'
+  templateUrl: './humanInteraction.component.html',
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class HumanInteractionComponent {
 
@@ -18,18 +20,10 @@ export class HumanInteractionComponent {
   private humanInterRef : FireLoopRef<HumanInteraction>;
 
   constructor(private rt:RealTime){
-    this.rt.onReady().subscribe(() => {
-
-      this.humanInterRef = this.rt.FireLoop.ref<HumanInteraction>(HumanInteraction);
-
-      // this.humanInterRef.on('changes', {offset:0,limit:10});
-
-    });
   }
 
-
-
   createHuman(text:string): void {
+
     let lHumanInteraction : HumanInteraction = new HumanInteraction({"text":""});
     let lHumanRef : FireLoopRef<HumanInteraction> = this.rt.FireLoop.ref<HumanInteraction>(HumanInteraction);
     let lAIRef : FireLoopRef<AIInteraction> = this.rt.FireLoop.ref<AIInteraction>(AIInteraction);

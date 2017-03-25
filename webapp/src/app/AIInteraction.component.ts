@@ -1,29 +1,41 @@
-import { Component } from '@angular/core';
-
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RealTime } from './shared/sdk/services';
-import { Observable } from 'rxjs/Observable';
-import { FireLoop } from './shared/sdk/models/FireLoop';
 import { FireLoopRef } from './shared/sdk/models/FireLoopRef';
 
-
-import { HumanInteraction } from './shared/sdk/models';
 import { AIInteraction } from './shared/sdk/models'
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'machine-interaction',
-  templateUrl: './AIInteraction.component.html'
+  templateUrl: './AIInteraction.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AIInteractionComponent {
   public AIInterRef : FireLoopRef<AIInteraction>;
-  private AIInter : AIInteraction = new AIInteraction();
+
+  private AIInters : Observable<Array<AIInteraction>> = new Observable<Array<AIInteraction>>();
+  private AIInter : AIInteraction = new AIInteraction({ text: '' });
 
   constructor(private rt:RealTime) {
     this.rt.onReady().subscribe(() => {
 
       this.AIInterRef = this.rt.FireLoop.ref<AIInteraction>(AIInteraction);
 
+      this.AIInterRef.on('changes').subscribe((AIInters:Array<AIInteraction>) => {
+        // this.AIInters = AIInters;
+        console.log('count ', this.AIInters);
+        console.log('inside onchange');
+      });
       // this.humanInterRef.on('changes', {offset:0,limit:10});
 
     });
+  }
+
+  createAI(text:string): void {
+    console.log('inside CreateAI');
+    var lAIRef : FireLoopRef<AIInteraction> = this.rt.FireLoop.ref<AIInteraction>(AIInteraction);
+    let lAI : AIInteraction;
+    lAIRef.create(lAI).subscribe((llAI : AIInteraction) => {lAI.text = this.AIInter.text});
+    this.AIInter = lAI;
   }
 }

@@ -1,13 +1,14 @@
 <div id="botinterDiv" class="botintercl">
 
-  <!-- <textarea id="botInter" *ngFor="let _AIInter of AIInterRef.on('change') | async" name="AIText" [(ngModel)]=AIInter.text readonly="readonly">HI THERE</textarea> -->
+  <!-- <textarea id="botInter" *ngFor="let _AIInter of AIInterRef.on('changes') | async" name="AIText" [(ngModel)]=AIInter.text readonly="readonly">HI THERE</textarea> -->
 
-
-  <ul *ngIf="AIInterRef">
-    <li *ngFor="let _AIInter of AIInterRef.on('change') | async">
-      <input name="_AIInter.id" [(ngModel)]="_AIInter.text" />
-    </li>
+<ul *ngIf="AIInterRef">
+  <li *ngFor="let _AIInter of AIInterRef.on('change') | async">
+    <textarea id="botInter" *ngFor="let _AIInter of AIInterRef.on('changes') | async" name="AIText" [(ngModel)]=AIInter.text readonly="readonly">HI THERE</textarea>
+  </li>
   </ul>
+
+  <textarea id="AIInterMock" (keyup.enter)="createAI();" [(ngModel)]="AIInter.text" name="text"></textarea>
 
 </div>
 
