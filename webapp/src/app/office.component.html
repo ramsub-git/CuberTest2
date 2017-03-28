@@ -3,6 +3,16 @@
 <div id="left" class="infercl"></div>
 <div id="inter" class="intercl">
 
+
+  <div id="botinterDiv" class="botintercl">
+
+    <div *ngFor="let text of AISaid | async">{{text}}</div>
+
+    <!-- <div>{{AISaid | async }}</div> -->
+
+  </div>
+
+
   <machine-interaction></machine-interaction>
   <human-interaction></human-interaction>
 

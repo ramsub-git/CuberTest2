@@ -22,18 +22,16 @@ export class HumanInteractionComponent {
   constructor(private rt:RealTime){
   }
 
-  createHuman(text:string): void {
+  humanSaid(text:string): void {
+
+    let lAI : AIInteraction = new AIInteraction({text:""});
 
     let lHumanInteraction : HumanInteraction = new HumanInteraction({"text":""});
     let lHumanRef : FireLoopRef<HumanInteraction> = this.rt.FireLoop.ref<HumanInteraction>(HumanInteraction);
-    let lAIRef : FireLoopRef<AIInteraction> = this.rt.FireLoop.ref<AIInteraction>(AIInteraction);
-    let lAI : AIInteraction;
-    lAIRef.create(lAI).subscribe((llAI : AIInteraction) => {lAI.text = this.humanInter.text});
 
     lHumanRef.create(this.humanInter).subscribe((instance:HumanInteraction) => {
       console.log('inside CreateHuman');
-      var lOfficeRef: FireLoopRef<Office> = this.rt.FireLoop.ref<Office>(Office);
-      lOfficeRef.remote('humanSaid', Array(instance.text));
+      lHumanRef.remote('humanSaid', Array(instance.text));
       console.log(instance);
     });
     this.humanInter = lHumanInteraction;

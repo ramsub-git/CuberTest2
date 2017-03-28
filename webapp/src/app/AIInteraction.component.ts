@@ -4,6 +4,7 @@ import { FireLoopRef } from './shared/sdk/models/FireLoopRef';
 
 import { AIInteraction } from './shared/sdk/models'
 import {Observable} from "rxjs";
+import {mergeScan} from "rxjs/operator/mergeScan";
 
 @Component({
   selector: 'machine-interaction',
@@ -27,6 +28,8 @@ export class AIInteractionComponent {
         console.log('inside onchange');
       });
       // this.humanInterRef.on('changes', {offset:0,limit:10});
+
+      this.rt.IO.on('MachineSaid').subscribe((message:string) => console.log('inside client MachineSaid', message));
 
     });
   }
